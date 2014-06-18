@@ -2,8 +2,8 @@
 /********* VARIABLES *********/
 
 ////////// Colors
-$primary-color: #a64b00;
-$primary-light-color: #ffb273;
+$primary-color: #A64B00;
+$primary-light-color: #FFB273;
 $secondary-color: #222222;
 
 $navigation-background: $secondary-color;
@@ -11,15 +11,14 @@ $navigation-text: #999999;
 $navigation-text-highlight: #FFFFFF;
 $navigation-text-padding: 15px 10px;
 
+$title-color: #FFFFFF;
 $text-color: $secondary-color;
-$link-color: #1d7373;
+$link-color: #1D7373;
 
 ////////// Sizes
 
 $max-width-small: 700px;
 $min-width-large: 701px;
-
-$max-width-social: 800px;
 
 $max-size: 800px;
 
@@ -57,9 +56,20 @@ body {
 	outline: none;
 }
 
-//////////
+////////// Text
 
+h1 {
+	color: $title-color;
+	
+	font-size: 40px;
+	font-weight: 400;
+}
 
+@media (max-width: $max-width-small) {
+	h1 {
+		padding: 0 20px;
+	}
+}
 
 /********* LAYOUT *********/
 
@@ -221,19 +231,15 @@ nav {
 		text-decoration: none;
 		
 		>i {
-			font-size: 20px;
-			display: inline;
-
-			@media (max-width: $max-width-social) {
-				display: block;
-			}
+			font-size: 24px;
+			display: block;
 		}
 		
 		&:hover {
 			color: $primary-color;
 		}
 
-		@media (max-width: $max-width-social) {
+		@media (max-width: $max-width-small) {
 			width: 50% !important;
 		}
 	}
@@ -262,6 +268,52 @@ nav {
 		&:hover {
 			color: $primary-color;
 			text-decoration: none;
+		}
+	}
+}
+
+////////// Projects
+
+.projects {
+	margin: 0 -10px;
+
+	@media (max-width: $max-width-small) {
+		padding: 0 20px;
+	}
+	
+	>a.project {
+		display: inline-block;
+		
+		padding: 0 10px;
+		margin: 20px 0;
+		width: 50%;
+		
+		text-align: center;
+		text-decoration: none;
+		color: $title-color;
+		font-weight: 600;
+		
+		>img {
+			border-radius: 10px;
+			max-width: 100%;
+		}
+
+		&:hover {
+			>img {
+				-webkit-box-shadow: 0 0 10px #000000;
+				-moz-box-shadow: 0 0 10px #000000;
+				box-shadow: 0 0 10px #000000;
+			}
+		}
+		
+		@media (max-width: 500px) {
+			width: 100%;
+			
+			>img {
+				display: block;
+				margin: 0 auto;
+				max-width: 280px;
+			}
 		}
 	}
 }

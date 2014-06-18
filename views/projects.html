@@ -1,0 +1,8 @@
+<h1>Projects</h1>
+
+<div class="projects">
+	<a class="project" ng-repeat="project in projects" ng-href="#/projects/{{project.path}}">
+		<img ng-src="assets/images/projects/icons/{{project.path}}.png"/>
+		{{project.title}}
+	</a>
+</div>

@@ -21,6 +21,14 @@ body {
 :focus {
   outline: none; }
 
+h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 400; }
+
+@media (max-width: 700px) {
+  h1 {
+    padding: 0 20px; } }
 /********* LAYOUT *********/
 nav {
   max-width: 800px;
@@ -123,14 +131,11 @@ nav {
     color: #ffb273;
     text-decoration: none; }
     .social > a.social-item > i {
-      font-size: 20px;
-      display: inline; }
-      @media (max-width: 800px) {
-        .social > a.social-item > i {
-          display: block; } }
+      font-size: 24px;
+      display: block; }
     .social > a.social-item:hover {
       color: #a64b00; }
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
       .social > a.social-item {
         width: 50% !important; } }
   @media (min-width: 701px) {
@@ -150,3 +155,32 @@ nav {
     .content-box a:hover {
       color: #a64b00;
       text-decoration: none; }
+
+.projects {
+  margin: 0 -10px; }
+  @media (max-width: 700px) {
+    .projects {
+      padding: 0 20px; } }
+  .projects > a.project {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 20px 0;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600; }
+    .projects > a.project > img {
+      border-radius: 10px;
+      max-width: 100%; }
+    .projects > a.project:hover > img {
+      -webkit-box-shadow: 0 0 10px #000000;
+      -moz-box-shadow: 0 0 10px #000000;
+      box-shadow: 0 0 10px #000000; }
+    @media (max-width: 500px) {
+      .projects > a.project {
+        width: 100%; }
+        .projects > a.project > img {
+          display: block;
+          margin: 0 auto;
+          max-width: 280px; } }

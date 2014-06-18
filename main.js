@@ -9,6 +9,10 @@ angular.module('adamdebono', ['ngRoute'])
 					controller: page.controller,
 					templateUrl: templateUrl
 				});
+				
+				if (page.subPages) {
+					setupRoutes(page.subPages, url+'/');
+				}
 			});
 		};
 		
