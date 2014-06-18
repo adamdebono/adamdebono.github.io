@@ -7,7 +7,7 @@
 	</ul>
 	<ul class="items">
 		<li ng-repeat="navItem in navItems" ng-class="{current: navItem.href.substring(1)==path, other: true}">
-			<a ng-href="{{navItem.href}}">{{navItem.title}}</a>
+			<a ng-href="{{navItem.href}}" tabindex="0">{{navItem.title}}</a>
 		</li>
 	</ul>
 </nav>

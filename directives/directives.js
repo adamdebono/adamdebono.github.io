@@ -1,23 +1,22 @@
 angular.module('adamdebono')
-	.directive('navigation', ['$location', function($location) {
+	.directive('navigation', ['$location', 'adPages', function($location, adPages) {
 		return {
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'directives/navigation.html',
 			controller: function($scope) {
-				$scope.navItems = [
-					{
-						title: 'Home',
-						href: '#/'
-					},{
-						title: 'Projects',
-						href: '#/projects'
-					},{
-						title: 'Open Source',
-						href: '#/open-source'
-					}
-				];
-
+				var setupNav = function(pages, root) {
+					var items = [];
+					angular.forEach(pages, function(page) {
+						items.push({
+							title: page.title,
+							href: '#'+root+page.path
+						});
+					});
+					return items;
+				};
+				$scope.navItems = setupNav(adPages, '/');
+				
 				$scope.path = $location.path();
 				$scope.$on('$locationChangeSuccess', function() {
 					$scope.path = $location.path();
@@ -53,7 +52,7 @@ angular.module('adamdebono')
 						icon: 'fa-envelope-square',
 						href: 'mailto:adam@adebono.com'
 					}
-				]
+				];
 			}
 		};
 	}])

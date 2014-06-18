@@ -16,8 +16,8 @@ $link-color: #1d7373;
 
 ////////// Sizes
 
-$max-width-small: 500px;
-$min-width-large: 501px;
+$max-width-small: 700px;
+$min-width-large: 701px;
 
 $max-width-social: 800px;
 
@@ -51,6 +51,10 @@ body {
 	@media (max-width: $max-width-small) {
 		padding-top: 52px;
 	}
+}
+
+:focus {
+	outline: none;
 }
 
 //////////
@@ -124,58 +128,49 @@ nav {
 			}
 		}
 	}
-	
-	&:focus {
-		outline: none;
-	}
 
 	//Collapsed
 	@media (max-width: $max-width-small) {
 		cursor: pointer;
+
+		-webkit-transition: -webkit-box-shadow 0.4s;
+		-moz-transition: -moz-box-shadow 0.4s;
+		-ms-transition: box-shadow 0.4s;
+		-o-transition: box-shadow 0.4s;
+		transition: box-shadow 0.4s;
 		
 		>a.toggle {
+			position: absolute;
+			top: 0;right: 0;bottom: 0;
+			
 			display: block;
-			float: right;
 			padding: $navigation-text-padding;
 
 			color: white;
 
 			pointer-events: none;
 			
-			&:focus {
-				outline: none;
-			}
-			
 			>i {
-				-webkit-transition: -webkit-transform 0.25s;
-				-moz-transition: transform 0.25s;
-				-ms-transition: -ms-transform 0.25s;
-				-o-transition: transform 0.25s;
-				transition: transform 0.25s;
+				-webkit-transition: -webkit-transform 0.4s;
+				-moz-transition: transform 0.4s;
+				-ms-transition: -ms-transform 0.4s;
+				-o-transition: transform 0.4s;
+				transition: transform 0.4s;
 			}
 		}
 		>ul.items {
-			-webkit-transition: max-height 0.2s;
-			-moz-transition: max-height 0.2s;
-			-ms-transition: max-height 0.2s;
-			-o-transition: max-height 0.2s;
-			transition: max-height 0.2s;
+			-webkit-transition: max-height 0.4s;
+			-moz-transition: max-height 0.4s;
+			-ms-transition: max-height 0.4s;
+			-o-transition: max-height 0.4s;
+			transition: max-height 0.4s;
 			
 			display: block;
 			max-height: 0px;
-//			height: 0px;
 			overflow: hidden;
 			
 			>li {
 				display: block;
-			}
-		}
-
-		
-		
-		&:not(:focus) {
-			>ul.items {
-				
 			}
 		}
 		
@@ -190,7 +185,6 @@ nav {
 				&.items {
 					max-height: 300px;
 					overflow-y: auto;
-//					height: 100px;
 				}
 			}
 			

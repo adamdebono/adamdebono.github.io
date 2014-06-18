@@ -1,21 +1,17 @@
 angular.module('adamdebono', ['ngRoute'])
-	.config(function ($routeProvider) {
-		$routeProvider
-			.when('/', {
-				controller: 'HomeCtrl',
-				templateUrl: 'views/home.html'
-			})
-			.when('/projects', {
-				controller: 'ProjectsCtrl',
-				templateUrl: 'views/projects.html'
-			})
-			.otherwise({
-				redirectTo: '/'
-			})
-	})
-	.controller('HomeCtrl', ['$scope', function ($scope) {
-
-	}])
-	.controller('ProjectsCtrl', ['$scope', function($scope) {
-
+	.config(['$routeProvider', 'adPages', function ($routeProvider, adPages) {
+		var viewDirectory = 'views';
+		var setupRoutes = function(pages, root) {
+			angular.forEach(pages, function(page) {
+				var url = root+page.path;
+				var templateUrl = viewDirectory+root+page.id+'.html';
+				$routeProvider.when(url, {
+					controller: page.controller,
+					templateUrl: templateUrl
+				});
+			});
+		};
+		
+		setupRoutes(adPages, '/');
+		$routeProvider.otherwise({redirectTo: '/'});
 	}]);
