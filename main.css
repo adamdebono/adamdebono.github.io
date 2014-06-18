@@ -21,14 +21,19 @@ body {
 :focus {
   outline: none; }
 
-h1 {
+h1, h2 {
   color: white;
-  font-size: 40px;
   font-weight: 400; }
 
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 32px; }
+
 @media (max-width: 700px) {
-  h1 {
-    padding: 0 20px; } }
+  h1, h2 {
+    margin: 20px 20px 0 20px; } }
 /********* LAYOUT *********/
 nav {
   max-width: 800px;
@@ -121,7 +126,7 @@ nav {
 
 .social {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   background-color: #222222; }
   .social > a.social-item {
     display: inline-block;
@@ -143,7 +148,7 @@ nav {
       padding: 0 10px; } }
 
 .content-box {
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 20px;
   background-color: #ffb273;
   border-bottom: solid 10px #222222;

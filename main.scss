@@ -58,16 +58,21 @@ body {
 
 ////////// Text
 
-h1 {
+h1,h2 {
 	color: $title-color;
-	
-	font-size: 40px;
 	font-weight: 400;
 }
 
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 32px;
+}
+
 @media (max-width: $max-width-small) {
-	h1 {
-		padding: 0 20px;
+	h1,h2 {
+		margin: 20px 20px 0 20px;
 	}
 }
 
@@ -216,7 +221,7 @@ nav {
 
 .social {
 	max-width: $max-size;
-	margin: 20px auto;
+	margin: 20px auto 0 auto;
 	
 	background-color: $navigation-background;
 	
@@ -252,7 +257,7 @@ nav {
 ////////// Content Box
 
 .content-box {
-	margin: 40px 0;
+	margin: 20px 0;
 	padding: 20px;
 	
 	background-color: $primary-light-color;
