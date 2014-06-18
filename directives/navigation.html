@@ -1,0 +1,11 @@
+<nav tabindex="0">
+	<a class="toggle" tabindex="0">Menu</a>
+	<ul class="title">
+		<li><a>Adam Debono</a></li>
+	</ul>
+	<ul class="items">
+		<li ng-repeat="navItem in navItems" ng-class="{current: navItem.href.substring(1)==path, other: true}">
+			<a ng-href="{{navItem.href}}">{{navItem.title}}</a>
+		</li>
+	</ul>
+</nav>

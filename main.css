@@ -1,0 +1,85 @@
+/********* VARIABLES *********/
+/********* SETUP *********/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #a64b00;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media (min-width: 501px) {
+    body {
+      margin: 0 auto;
+      max-width: 800px;
+      padding-top: 20px;
+      padding-right: 40px;
+      padding-left: 40px; } }
+  @media (max-width: 500px) {
+    body {
+      padding-top: 60px; } }
+
+/********* LAYOUT *********/
+nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background-color: #222222; }
+  @media (max-width: 500px) {
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0; } }
+  nav a.toggle {
+    display: none; }
+  nav > ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0; }
+    nav > ul > li {
+      display: inline-block; }
+      nav > ul > li > a {
+        display: block;
+        padding: 15px 10px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #999999; }
+        nav > ul > li > a[href]:hover {
+          color: white; }
+      nav > ul > li.current > a {
+        color: white;
+        cursor: default; }
+    @media (max-width: 500px) {
+      nav > ul.title {
+        display: block;
+        width: 100%;
+        text-align: center; } }
+    nav > ul.title > li > a {
+      font-size: 18px; }
+    @media (max-width: 500px) {
+      nav > ul.items {
+        display: none; } }
+  nav:focus {
+    outline: none; }
+  @media (max-width: 500px) {
+    nav {
+      cursor: pointer; }
+      nav > a.toggle {
+        display: block;
+        float: right;
+        padding: 15px 10px;
+        color: white;
+        pointer-events: none; }
+        nav > a.toggle:focus {
+          outline: none; }
+      nav > ul.items > li {
+        display: block; }
+      nav:focus {
+        cursor: inherit; }
+        nav:focus > ul.items {
+          display: block; }
+        nav:focus > a.toggle {
+          cursor: pointer;
+          pointer-events: inherit; } }

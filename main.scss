@@ -1,0 +1,175 @@
+
+/********* VARIABLES *********/
+
+////////// Colors
+$background-color: #a64b00;
+$content-background: #ffb273;
+
+$navigation-background: #222222;
+$navigation-text: #999999;
+$navigation-text-highlight: #FFFFFF;
+$navigation-text-padding: 15px 10px;
+
+$text-color: #222222;
+//$link-color: #;
+
+////////// Sizes
+
+$max-width-small: 500px;
+$min-width-large: 501px;
+
+$max-size: 800px;
+
+$spacing-sides: 40px;
+$spacing-top: 20px;
+
+/********* SETUP *********/
+
+//////////
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+
+	background-color: $background-color;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	@media (min-width: $min-width-large) {
+		margin: 0 auto;
+		max-width: $max-size;
+
+		padding-top: $spacing-top;
+		padding-right: $spacing-sides;
+		padding-left: $spacing-sides;
+	}
+	@media (max-width: $max-width-small) {
+		padding-top: 60px;
+	}
+}
+
+//////////
+
+
+
+/********* LAYOUT *********/
+
+////////// Navigation
+
+nav {
+	max-width: $max-size;
+	margin: 0 auto;
+	padding: 0 10px;
+
+	background-color: $navigation-background;
+
+	@media (min-width: $min-width-large) {
+		
+	}
+	@media (max-width: $max-width-small) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	
+	a.toggle {
+		display: none;
+	}
+
+	>ul {
+		display: inline-block;
+
+		padding: 0;margin: 0;
+
+		>li {
+			display: inline-block;
+
+			>a {
+				display: block;
+				padding: $navigation-text-padding;
+
+				font-size: 14px;
+				text-decoration: none;
+				color: $navigation-text;
+
+				&[href]:hover {
+					color: $navigation-text-highlight;
+				}
+			}
+			&.current {
+				>a {
+					color: $navigation-text-highlight;
+					cursor: default;
+				}
+			}
+		}
+
+		&.title {
+			@media (max-width: $max-width-small) {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+
+			>li {
+				>a {
+					font-size: 18px;
+				}
+			}
+		}
+
+		&.items {
+			@media (max-width: $max-width-small) {
+				display: none;
+			}
+		}
+	}
+	
+	&:focus {
+		outline: none;
+	}
+
+	//Collapsed
+	@media (max-width: $max-width-small) {
+		cursor: pointer;
+		
+		>a.toggle {
+			display: block;
+			float: right;
+			padding: $navigation-text-padding;
+
+			color: white;
+
+			pointer-events: none;
+			
+			&:focus {
+				outline: none;
+			}
+		}
+		>ul.items {
+			>li {
+				display: block;
+			}
+		}
+		
+		&:focus {
+			cursor: inherit;
+			
+			>ul {
+				&.items {
+					display: block;
+				}
+			}
+			
+			>a.toggle {
+				cursor: pointer;
+				pointer-events: inherit;
+			}
+		}
+	}
+}
