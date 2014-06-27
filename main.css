@@ -1,4 +1,5 @@
 /********* VARIABLES *********/
+/********* MIXINS **********/
 /********* SETUP *********/
 * {
   -webkit-box-sizing: border-box;
@@ -7,7 +8,7 @@
 
 body {
   margin: 0;
-  background-color: #a64b00;
+  background-color: #aaaaaa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   @media (min-width: 701px) {
     body {
@@ -133,13 +134,13 @@ nav {
     padding: 15px 10px;
     text-align: center;
     font-size: 14px;
-    color: #ffb273;
+    color: #cccccc;
     text-decoration: none; }
     .social > a.social-item > i {
       font-size: 24px;
       display: block; }
     .social > a.social-item:hover {
-      color: #a64b00; }
+      color: #aaaaaa; }
     @media (max-width: 700px) {
       .social > a.social-item {
         width: 50% !important; } }
@@ -150,7 +151,7 @@ nav {
 .content-box {
   margin: 20px 0;
   padding: 20px;
-  background-color: #ffb273;
+  background-color: #cccccc;
   border-bottom: solid 10px #222222;
   color: #222222;
   font-size: 14px;
@@ -158,8 +159,10 @@ nav {
   .content-box a {
     color: #1d7373; }
     .content-box a:hover {
-      color: #a64b00;
+      color: #aaaaaa;
       text-decoration: none; }
+  .content-box.content-box-error {
+    border-top: solid 20px red; }
 
 .projects {
   margin: 0 -10px; }
@@ -189,3 +192,57 @@ nav {
           display: block;
           margin: 0 auto;
           max-width: 280px; } }
+
+.repositories a {
+  color: #1d7373; }
+  .repositories a:hover {
+    color: #aaaaaa;
+    text-decoration: none; }
+.repositories > .repository {
+  display: block;
+  padding: 10px;
+  margin-top: -2px;
+  border: solid 2px #222222;
+  background-color: #cccccc; }
+  @media (max-width: 700px) {
+    .repositories > .repository {
+      border-left: none;
+      border-right: none; } }
+  .repositories > .repository:not(:focus) {
+    cursor: pointer; }
+    .repositories > .repository:not(:focus):hover {
+      background-color: #aaaaaa; }
+  .repositories > .repository > .head > .name {
+    font-size: 18px;
+    font-weight: 600;
+    word-wrap: break-word; }
+  .repositories > .repository > .head > .description {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic; }
+  .repositories > .repository > .details {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.4s;
+    -moz-transition: max-height 0.4s;
+    -ms-transition: max-height 0.4s;
+    -o-transition: max-height 0.4s;
+    transition: max-height 0.4s; }
+    .repositories > .repository > .details > ul.stats {
+      padding: 0;
+      list-style-type: none; }
+      .repositories > .repository > .details > ul.stats > li {
+        margin: 5px 0; }
+        .repositories > .repository > .details > ul.stats > li > i {
+          width: 30px;
+          line-height: 30px;
+          border-radius: 5px;
+          font-size: 20px;
+          text-align: center;
+          color: #aaaaaa;
+          background-color: #222222; }
+        .repositories > .repository > .details > ul.stats > li > .stat {
+          font-weight: 600;
+          font-style: italic; }
+  .repositories > .repository:focus > .details {
+    max-height: 200px; }

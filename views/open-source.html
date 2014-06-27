@@ -1,7 +1,41 @@
 <h1>Open Source</h1>
 
-<div class="repositories">
-	<div class="repository" ng-repeat="repo in repos">
-		{{repo.name}}
+<div class="content-box">
+    <p>These are my open source repositories, which are all hosted on GitHub. All source code used the
+        <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a> unless otherwise specified.</p>
+    <p><a href="http://github.com/adamdebono" target="_blank">View My Profile</a></p>
+</div>
+
+<div style="text-align: center;">
+    <activity-indicator ng-show="loading"></activity-indicator>
+</div>
+
+
+
+<div class="content-box content-box-error" ng-show="repos && !repos.length && !loading">
+    No repositories were found
+</div>
+
+<div class="content-box content-box-error" ng-show="error && !loading">
+    <p>{{error}}</p>
+    <p>You could <a ng-click="getRepos()">try again</a> or go to <a href="http://github.com/adamdebono" target="_blank">GitHub</a></p>
+</div>
+
+<div class="repositories" ng-show="repos.length">
+	<div class="repository" ng-repeat="repo in repos" tabindex="0">
+		<div class="head">
+            <span class="name">{{repo.name}}</span>
+            <span class="description">{{repo.description}}</span>
+        </div>
+        <div class="details">
+            <ul class="stats">
+                <li><i class="fa fa-terminal"></i> <span class="stat">Last Commit</span> {{repo.pushed_at | date : 'shortDate'}}</li>
+                <li><i class="fa fa-code"></i> <span class="stat">Language</span> {{repo.language}}</li>
+                <li><i class="fa fa-star"></i> <span class="stat">Stars</span> {{repo.stargazers_count}}</li>
+                <li><i class="fa fa-code-fork"></i> <span class="stat">Forks</span> {{repo.forks_count}}</li>
+            </ul>
+
+            <p><a ng-href="{{repo.html_url}}" target="_blank">View on GitHub</a></p>
+        </div>
 	</div>
 </div>

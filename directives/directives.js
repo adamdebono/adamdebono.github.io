@@ -56,6 +56,7 @@ angular.module('adamdebono')
 			}
 		};
 	}])
+
 	.directive('contentBox', [function() {
 		return {
 			restrict: 'E',
@@ -63,4 +64,14 @@ angular.module('adamdebono')
 			templateUrl: 'directives/content-box.html',
 			transclude: true
 		};
+	}])
+	.directive('activityIndicator', [function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			template: '<i class="fa fa-refresh fa-spin fa-4x"></i>',
+			scope: {
+
+			}
+		}
 	}]);

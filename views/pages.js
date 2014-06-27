@@ -56,25 +56,24 @@ angular.module('adamdebono')
 	}])
 
 //	Open Source
-	.controller('OpenSourceCtrl', ['$scope', '$http', function($scope, $http) {
-		$scope.repos = [];
-		
-		$http({
-			method: 'GET',
-//			url: 'https://api.github.com/users/adamdebono/repos',
-//			params: {
-//				type: 'owner',
-//				sort: 'pushed',
-//				direction: 'desc'
-//			}
-			url: 'https://api.github.com/search/repositories',
-			params: {
-				q: 'user:adamdebono',
-				sort: 'updated'
-			}
-		}).success(function(data, status, headers, config) {
-			$scope.repos = data.items;
-		}).error(function(data, status, headers, config) {
-			console.log('errors');
-		});
+	.controller('OpenSourceCtrl', ['$scope', 'adGithubApi', function($scope, adGithubApi) {
+		$scope.loadRepos = function() {
+			$scope.repos = undefined;
+			$scope.loading = true;
+			$scope.error = undefined;
+
+			adGithubApi.getRepos().then(function(repos) {
+				//success
+				$scope.loading = false;
+				$scope.repos = repos;
+
+				console.log(repos);
+			}, function(reason) {
+				//failure
+				$scope.loading = false;
+				$scope.error = reason;
+			});
+		};
+
+		$scope.loadRepos();
 	}]);
