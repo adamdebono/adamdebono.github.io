@@ -1,25 +1,29 @@
 <h1>Open Source</h1>
 
-<div class="content-box">
+<content-box>
     <p>These are my open source repositories, which are all hosted on GitHub. All source code used the
         <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a> unless otherwise specified.</p>
     <p><a href="http://github.com/adamdebono" target="_blank">View My Profile</a></p>
+</content-box>
+
+<div style="text-align: center;" ng-show="loading">
+    <activity-indicator></activity-indicator>
 </div>
 
-<div style="text-align: center;">
-    <activity-indicator ng-show="loading"></activity-indicator>
-</div>
 
 
+<span ng-show="!loading && repos && !repos.length">
+    <content-box box-style="info">
+		No repositories were found
+    </content-box>
+</span>
 
-<div class="content-box content-box-error" ng-show="repos && !repos.length && !loading">
-    No repositories were found
-</div>
-
-<div class="content-box content-box-error" ng-show="error && !loading">
-    <p>{{error}}</p>
-    <p>You could <a ng-click="getRepos()">try again</a> or go to <a href="http://github.com/adamdebono" target="_blank">GitHub</a></p>
-</div>
+<span ng-show="!loading && error!=undefined">
+	<content-box box-style="error">
+		<p>{{error}}</p>
+		<p>You could <a ng-click="getRepos()">try again</a> or go to <a href="http://github.com/adamdebono" target="_blank">GitHub</a></p>
+	</content-box>
+</span>
 
 <div class="repositories" ng-show="repos.length">
 	<div class="repository" ng-repeat="repo in repos" tabindex="0">

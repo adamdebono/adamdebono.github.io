@@ -57,6 +57,10 @@ angular.module('adamdebono')
 
 //	Open Source
 	.controller('OpenSourceCtrl', ['$scope', 'adGithubApi', function($scope, adGithubApi) {
+		$scope.repos = undefined;
+		$scope.loading = true;
+		$scope.error = undefined;
+
 		$scope.loadRepos = function() {
 			$scope.repos = undefined;
 			$scope.loading = true;
@@ -66,8 +70,6 @@ angular.module('adamdebono')
 				//success
 				$scope.loading = false;
 				$scope.repos = repos;
-
-				console.log(repos);
 			}, function(reason) {
 				//failure
 				$scope.loading = false;

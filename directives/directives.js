@@ -62,7 +62,20 @@ angular.module('adamdebono')
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'directives/content-box.html',
-			transclude: true
+			transclude: true,
+			scope: {
+				style: '@boxStyle'
+			},
+			controller: function($scope) {
+				$scope.$watch('style', function() {
+					console.log($scope.style);
+					if ($scope.style && $scope.style.length) {
+						$scope.boxStyle = 'content-box-'+$scope.style;
+					} else {
+						$scope.boxStyle = '';
+					}
+				});
+			}
 		};
 	}])
 	.directive('activityIndicator', [function() {
