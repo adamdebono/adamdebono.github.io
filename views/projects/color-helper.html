@@ -1,7 +1,9 @@
 <h1>Developer Color Helper</h1>
-<content-box>Developer Color Helper is a free tool for developers who work with colors (so, all of them). It allows you to easily preview colors on iOS controls, convert them to other formats and get other information.</content-box>
+<content-box>
+	<p>Developer Color Helper is a free tool for developers who work with colors (so, all of them). It allows you to easily preview colors on iOS controls, convert them to other formats and get other information.</p>
+</content-box>
 
-app store logo
+<p style="text-align: center;"><a href=""><img src="assets/images/apple/appstore-download.svg" width="270"/></a></p>
 
 <h2>Features</h2>
 <content-box>
@@ -14,7 +16,8 @@ app store logo
 </content-box>
 		
 <h2>Screenshots</h2>
-<content-box></content-box>
-
-<h2>Coming Soon</h2>
-<content-box>A new update is on it’s way, with new features including saving and sharing colors, but most importantly iOS 7 support will be included in the next update.</content-box>
+<content-box>
+	<div class="screenshots">
+		<img ng-repeat="screenshot in screenshots" ng-src="assets/images/projects/color-helper/screenshots/{{screenshot}}.jpg" ng-style="{width: (100/screenshots.length)+'%'}"/>
+	</div>
+</content-box>

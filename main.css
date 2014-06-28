@@ -91,7 +91,7 @@ nav {
         bottom: 0;
         display: block;
         padding: 15px 10px;
-        color: white;
+        color: #222222;
         pointer-events: none; }
         nav > a.toggle > i {
           -webkit-transition: -webkit-transform 0.4s;
@@ -151,6 +151,19 @@ nav {
     .social {
       padding: 0 10px; } }
 
+.footer-message {
+  text-align: center;
+  font-size: 10px;
+  font-style: italic;
+  color: #666666; }
+  .footer-message a {
+    cursor: pointer;
+    color: #66512c;
+    text-decoration: underline;
+    font-weight: 700; }
+    .footer-message a:hover {
+      text-decoration: none; }
+
 .content-box {
   margin: 20px 0;
   padding: 20px;
@@ -170,7 +183,6 @@ nav {
     border-top-width: 10px; }
   .content-box.content-box-error {
     color: #a94442;
-    color: #a94442;
     border-color: #a94442; }
   .content-box.content-box-success {
     color: #3c763d;
@@ -178,6 +190,34 @@ nav {
   .content-box.content-box-info {
     color: #31708f;
     border-color: #31708f; }
+  @media (max-width: 700px) {
+    .content-box {
+      border-right: none;
+      border-left: none; } }
+  .content-box > .section {
+    margin: 20px 0; }
+    @media (min-width: 501px) {
+      .content-box > .section:before, .content-box > .section:after {
+        content: ' ';
+        display: table; }
+      .content-box > .section:after {
+        clear: both; }
+      .content-box > .section > img {
+        float: left;
+        max-width: 200px;
+        margin-right: 20px; }
+      .content-box > .section > h3 {
+        margin-top: 0; } }
+    @media (max-width: 500px) {
+      .content-box > .section > img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        max-height: 400px; } }
+  .content-box > *:first-child {
+    margin-top: 0; }
+  .content-box > *:last-child {
+    margin-bottom: 0; }
 
 @media (max-width: 700px) {
   .projects {
@@ -208,6 +248,16 @@ nav {
         display: block;
         margin: 0 auto;
         max-width: 280px; } }
+
+@media (max-width: 700px) {
+  .screenshots > img {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: inherit !important; } }
+@media (min-width: 701px) {
+  .screenshots > img {
+    padding: 0 10px; } }
 
 .repositories {
   color: #8a6d3b; }

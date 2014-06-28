@@ -61,7 +61,7 @@ angular.module('adamdebono')
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'directives/content-box.html',
+			template: '<div class="content-box {{boxStyle}}" ng-transclude></div>',
 			transclude: true,
 			scope: {
 				style: '@boxStyle'
@@ -78,6 +78,23 @@ angular.module('adamdebono')
 			}
 		};
 	}])
+	.directive('contentSection', [function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			transclude: true,
+			template: '<div class="section">' +
+				'<img ng-src="{{imgSrc}}"/>' +
+				'<h3>{{title}}</h3>' +
+				'<div ng-transclude></div>' +
+			'</div>',
+			scope: {
+				title: '@',
+				imgSrc: '@'
+			}
+		}
+	}])
+
 	.directive('activityIndicator', [function() {
 		return {
 			restrict: 'E',

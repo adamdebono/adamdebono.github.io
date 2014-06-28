@@ -52,7 +52,12 @@ angular.module('adamdebono')
 		
 	}])
 	.controller('ColorHelperCtrl', ['$scope', function($scope) {
-		
+		$scope.screenshots = [
+			'1',
+			'2',
+			'3',
+			'4'
+		]
 	}])
 
 //	Open Source
