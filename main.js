@@ -1,8 +1,9 @@
-angular.module('adamdebono', ['ngRoute'])
+angular.module('adamdebono', ['ngRoute', 'ngAnimate'])
 	.constant('adGithub', {
 		apiUrl: 'https://api.github.com',
 		username: 'adamdebono'
 	})
+
 
 	.config(['$routeProvider', 'adPages', function ($routeProvider, adPages) {
 		var viewDirectory = 'views';

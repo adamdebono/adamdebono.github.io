@@ -250,6 +250,29 @@ nav {
 	}
 }
 
+////////// Main
+
+//[ng-view] {
+//	-webkit-transition: all linear 0.5s;
+//	-moz-transition: all linear 0.5s;
+//	-ms-transition: all linear 0.5s;
+//	-o-transition: all linear 0.5s;
+//	transition: all linear 0.5s;
+//
+//	&.ng-enter {
+//		opacity: 0;
+//
+//		&.ng-leave-active {
+//			opacity: 1;
+//		}
+//	}
+//	&.ng-leave {
+//		&.ng-leave-active {
+//			opacity: 0;
+//		}
+//	}
+//}
+
 ////////// Footer
 
 .social {

@@ -4,7 +4,7 @@ angular.module('adamdebono')
 			title: 'Home',
 			id: 'home',
 			path: '',
-			controller: 'HomeCtrl'
+			controller: 'PlainCtrl'
 		},{
 			title: 'Projects',
 			id: 'projects',
@@ -16,13 +16,18 @@ angular.module('adamdebono')
 					title: 'UOW Map Mate',
 					id: 'map-mate',
 					path: 'map-mate',
-					controller: 'MapMateCtrl'
+					controller: 'PlainCtrl'
 				},{
 					title: 'Developer Color Helper',
 					id: 'color-helper',
 					path: 'color-helper',
 					controller: 'ColorHelperCtrl'
-				}
+				}/*,{
+					title: 'Angular Blog',
+					id: 'angular-blog',
+					path: 'angular-blog',
+					controller: 'PlainCtrl'
+				}*/
 			]
 		},{
 			title: 'Open Source',
@@ -33,11 +38,10 @@ angular.module('adamdebono')
 	])
 	
 /********** Controllers **********/
-	
-//	Home
-	.controller('HomeCtrl', ['$scope', function ($scope) {
 
-	}])
+	.controller('PlainCtrl', [function(){}])
+
+//	Home
 	
 //	Projects
 	.controller('ProjectsCtrl', ['$scope', 'adPages', function($scope, adPages) {
@@ -47,9 +51,6 @@ angular.module('adamdebono')
 				$scope.projects = page.subPages;
 			}
 		});
-	}])
-	.controller('MapMateCtrl', ['$scope', function($scope) {
-		
 	}])
 	.controller('ColorHelperCtrl', ['$scope', function($scope) {
 		$scope.screenshots = [
