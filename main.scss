@@ -3,21 +3,22 @@
 
 ////////// Colors
 $background-color: #FFFFFF;
-$primary-color: #FCF8E3;
-$secondary-color: #FAEBCC;
+$background-muted: #EEEEEE;
+$primary-color: #000000;
+$secondary-color: #222222;
 
 $error-color: #A94442;
 $success-color: #3C763D;
 $info-color: #31708F;
 
 $title-color: #222222;
-$text-color: #8A6D3B;
+$text-color: #222222;
 $text-muted-color: #666666;
-$link-color: #66512C;
+$link-color: rgb(26, 13, 171);
 
 $navigation-background: $secondary-color;
-$navigation-text: $text-color;
-$navigation-text-highlight: $title-color;
+$navigation-text: #CCCCCC;
+$navigation-text-highlight: #FFFFFF;
 $navigation-text-padding: 15px 10px;
 
 ////////// Sizes
@@ -39,19 +40,6 @@ $spacing-vert: 20px;
 	}
 	&:after {
 		clear: both;
-	}
-}
-
-@mixin links() {
-	a {
-		cursor: pointer;
-		color: $link-color;
-		text-decoration: underline;
-		font-weight: 700;
-
-		&:hover {
-			text-decoration: none;
-		}
 	}
 }
 
@@ -86,11 +74,19 @@ body {
 	outline: none;
 }
 
-////////// Text
+/********* TEXT *********/
 
-h1,h2 {
+////////// Overall
+
+p,h1,h2,h3 {
+	color: $text-color;
+}
+
+////////// Headings
+
+h1,h2,h3 {
 	color: $title-color;
-	font-weight: 400;
+	font-weight: 600;
 }
 
 h1 {
@@ -99,10 +95,20 @@ h1 {
 h2 {
 	font-size: 32px;
 }
+h3 {
+	font-weight: 400;
+	font-size: 26px;
+}
 
-@media (max-width: $max-width-small) {
-	h1,h2 {
-		margin: 20px 20px 0 20px;
+////////// Links
+
+a {
+	cursor: pointer;
+	color: $link-color;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
 	}
 }
 
@@ -169,6 +175,7 @@ nav {
 
 			>li {
 				>a {
+					cursor: default;
 					font-weight: 600;
 					font-size: 18px;
 					color: $navigation-text-highlight;
@@ -194,7 +201,7 @@ nav {
 			display: block;
 			padding: $navigation-text-padding;
 
-			color: $title-color;
+			color: $navigation-text-highlight;
 
 			pointer-events: none;
 			
@@ -252,7 +259,9 @@ nav {
 
 ////////// Main
 
-//[ng-view] {
+[ng-view] {
+	padding: 0 20px;
+
 //	-webkit-transition: all linear 0.5s;
 //	-moz-transition: all linear 0.5s;
 //	-ms-transition: all linear 0.5s;
@@ -271,7 +280,7 @@ nav {
 //			opacity: 0;
 //		}
 //	}
-//}
+}
 
 ////////// Footer
 
@@ -315,8 +324,6 @@ nav {
 	font-size: 10px;
 	font-style: italic;
 	color: $text-muted-color;
-
-	@include links();
 }
 
 ////////// Content Box
@@ -332,57 +339,23 @@ nav {
 	font-size: 14px;
 	line-height: 1.4;
 
-	@include links();
-
 	&.content-box-error, &.content-box-success, &.content-box-info {
 		border-top-width: 10px;
 	}
 	&.content-box-error {
 		color: $error-color;
 		border-color: $error-color;
+		background-color: $error-color + #999999;
 	}
 	&.content-box-success {
 		color: $success-color;
 		border-color: $success-color;
+		background-color: $success-color + #999999;
 	}
 	&.content-box-info {
 		color: $info-color;
 		border-color: $info-color;
-	}
-
-	@media (max-width: $max-width-small) {
-		border-right: none;
-		border-left: none;
-	}
-
-	>.section {
-		margin: 20px 0;
-
-		@media (min-width: 501px) {
-			@include clearfix();
-
-			>img {
-				float: left;
-				max-width: 200px;
-
-				margin-right: 20px;
-			}
-			>h3 {
-				margin-top: 0;
-			}
-			>div {
-
-			}
-		}
-		@media (max-width: 500px) {
-
-			>img {
-				display: block;
-				margin: 0 auto;
-				max-width: 100%;
-				max-height: 400px;
-			}
-		}
+		background-color: $info-color + #999999;
 	}
 
 	>* {
@@ -395,13 +368,53 @@ nav {
 	}
 }
 
+.content-section {
+	margin: 20px 0;
+
+	@media (min-width: 501px) {
+		@include clearfix();
+
+		>img {
+			max-width: 200px;
+		}
+		>h3 {
+			margin-top: 0;
+		}
+		>div {
+
+		}
+
+		&:nth-child(odd) {
+			text-align: left;
+
+			>img {
+				float: left;
+				margin-right: 20px;
+			}
+		}
+		&:nth-child(even) {
+			text-align: right;
+
+			>img {
+				float: right;
+				margin-left: 20px;
+			}
+		}
+	}
+	@media (max-width: 500px) {
+
+		>img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			max-height: 400px;
+		}
+	}
+}
+
 ////////// Projects
 
 .projects {
-	@media (max-width: $max-width-small) {
-		padding: 0 20px;
-	}
-	
 	>a.project {
 		display: inline-block;
 		
@@ -461,7 +474,6 @@ nav {
 ////////// Repositories
 
 .repositories {
-	@include links();
 	color: $text-color;
 
 	>.repository {
@@ -470,13 +482,8 @@ nav {
 		padding: 10px;
 
 		margin-top: -2px;
-		border: solid 2px $secondary-color;
-		background-color: $primary-color;
-
-		@media (max-width: $max-width-small) {
-			border-left: none;
-			border-right: none;
-		}
+		border: solid 2px $primary-color;
+		background-color: $background-muted;
 
 		&:not(:focus) {
 			cursor: pointer;
@@ -525,8 +532,8 @@ nav {
 						font-size: 20px;
 						text-align: center;
 
-						color: $secondary-color;
-						background-color: $text-color;
+						color: $navigation-text-highlight;
+						background-color: $navigation-background;
 					}
 
 					>.stat {
@@ -537,6 +544,8 @@ nav {
 			}
 		}
 		&:focus {
+			background-color: $background-color;
+
 			>.details {
 				max-height: 200px;
 			}

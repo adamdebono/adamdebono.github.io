@@ -83,7 +83,7 @@ angular.module('adamdebono')
 			restrict: 'E',
 			replace: true,
 			transclude: true,
-			template: '<div class="section">' +
+			template: '<div class="content-section">' +
 				'<img ng-src="{{imgSrc}}"/>' +
 				'<h3>{{title}}</h3>' +
 				'<div ng-transclude></div>' +
