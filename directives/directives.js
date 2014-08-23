@@ -48,9 +48,9 @@ angular.module('adamdebono')
 						href: 'http://www.linkedin.com/in/adamdebono'
 					},{
 						title: 'eMail',
-						account: 'adam@adebono.com',
+						account: 'me@adamdebono.com',
 						icon: 'fa-envelope-square',
-						href: 'mailto:adam@adebono.com'
+						href: 'mailto:me@adamdebono.com'
 					}
 				];
 			}
