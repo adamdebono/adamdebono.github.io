@@ -23,7 +23,7 @@ angular.module('adamdebono', ['ngRoute', 'ngAnimate'])
 		};
 		
 		setupRoutes(adPages, '/');
-		$routeProvider.otherwise({redirectTo: '/'});
+		$routeProvider.otherwise({redirectTo: '/about'});
 	}])
 
 

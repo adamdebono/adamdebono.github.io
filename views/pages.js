@@ -1,9 +1,9 @@
 angular.module('adamdebono')
 	.constant('adPages', [
 		{
-			title: 'Home',
-			id: 'home',
-			path: '',
+			title: 'About',
+			id: 'about',
+			path: 'about',
 			controller: 'PlainCtrl'
 		},{
 			title: 'Projects',
