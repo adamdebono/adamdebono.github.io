@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  background-color: white;
+  background-color: #FFFFFF;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   @media (min-width: 701px) {
     body {
@@ -72,12 +72,12 @@ nav {
         padding: 15px 10px;
         font-size: 14px;
         text-decoration: none;
-        color: #cccccc; }
+        color: #CCCCCC; }
         nav > ul > li > a[href]:hover {
-          color: white; }
+          color: #FFFFFF; }
       nav > ul > li.current > a {
         font-weight: 600;
-        color: white;
+        color: #FFFFFF;
         cursor: default; }
     @media (max-width: 700px) {
       nav > ul.title {
@@ -87,7 +87,7 @@ nav {
     nav > ul.title > li > a {
       font-weight: 600;
       font-size: 18px;
-      color: white; }
+      color: #FFFFFF; }
   @media (max-width: 700px) {
     nav {
       cursor: pointer;
@@ -103,7 +103,7 @@ nav {
         bottom: 0;
         display: block;
         padding: 15px 10px;
-        color: white;
+        color: #FFFFFF;
         pointer-events: none; }
         nav > a.toggle > i {
           -webkit-transition: -webkit-transform 0.4s;
@@ -143,29 +143,6 @@ nav {
 [ng-view] {
   padding: 0 20px; }
 
-.social {
-  max-width: 800px;
-  margin: 20px auto 0 auto;
-  background-color: #222222; }
-  .social > a.social-item {
-    display: inline-block;
-    padding: 15px 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #cccccc;
-    text-decoration: none; }
-    .social > a.social-item > i {
-      font-size: 24px;
-      display: block; }
-    .social > a.social-item:hover {
-      color: white; }
-    @media (max-width: 700px) {
-      .social > a.social-item {
-        width: 50% !important; } }
-  @media (min-width: 701px) {
-    .social {
-      padding: 0 10px; } }
-
 .footer-message {
   text-align: center;
   font-size: 10px;
@@ -175,7 +152,7 @@ nav {
 .content-box {
   margin: 20px 0;
   padding: 20px;
-  background-color: black;
+  background-color: #000000;
   border: solid 2px #222222;
   color: #222222;
   font-size: 14px;
@@ -183,16 +160,16 @@ nav {
   .content-box.content-box-error, .content-box.content-box-success, .content-box.content-box-info {
     border-top-width: 10px; }
   .content-box.content-box-error {
-    color: #a94442;
-    border-color: #a94442;
+    color: #A94442;
+    border-color: #A94442;
     background-color: #ffdddb; }
   .content-box.content-box-success {
-    color: #3c763d;
-    border-color: #3c763d;
+    color: #3C763D;
+    border-color: #3C763D;
     background-color: #d5ffd6; }
   .content-box.content-box-info {
-    color: #31708f;
-    border-color: #31708f;
+    color: #31708F;
+    border-color: #31708F;
     background-color: #caffff; }
   .content-box > *:first-child {
     margin-top: 0; }
@@ -271,12 +248,12 @@ nav {
     display: block;
     padding: 10px;
     margin-top: -2px;
-    border: solid 2px black;
-    background-color: #eeeeee; }
+    border: solid 2px #000000;
+    background-color: #EEEEEE; }
     .repositories > .repository:not(:focus) {
       cursor: pointer; }
       .repositories > .repository:not(:focus):hover {
-        background-color: white; }
+        background-color: #FFFFFF; }
     .repositories > .repository > .head > .name {
       font-size: 18px;
       font-weight: 600;
@@ -304,12 +281,26 @@ nav {
             border-radius: 5px;
             font-size: 20px;
             text-align: center;
-            color: white;
+            color: #FFFFFF;
             background-color: #222222; }
           .repositories > .repository > .details > ul.stats > li > .stat {
             font-weight: 600;
             font-style: italic; }
     .repositories > .repository:focus {
-      background-color: white; }
+      background-color: #FFFFFF; }
       .repositories > .repository:focus > .details {
         max-height: 200px; }
+
+ul.social {
+  list-style-type: none;
+  padding: 0; }
+  ul.social > li {
+    line-height: 24px; }
+    ul.social > li > i {
+      font-size: 24px; }
+    ul.social > li > a {
+      vertical-align: text-bottom;
+      color: #222222;
+      font-size: 14px; }
+
+/*# sourceMappingURL=main.css.map */

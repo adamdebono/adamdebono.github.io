@@ -34,6 +34,11 @@ angular.module('adamdebono')
 			id: 'open-source',
 			path: 'open-source',
 			controller: 'OpenSourceCtrl'
+		},{
+			title: 'Contact',
+			id: 'contact',
+			path: 'contact',
+			controller: 'ContactCtrl'
 		}
 	])
 	
@@ -84,4 +89,37 @@ angular.module('adamdebono')
 		};
 
 		$scope.loadRepos();
+	}])
+
+//	Contact
+	.controller('ContactCtrl', ['$scope', function($scope) {
+		var alias = 'me';
+		var domain = 'adamdebono';
+		var tld = 'com';
+		
+		$scope.email = alias + '@' + domain + '.' + tld;
+
+		$scope.contactItems = [
+			{
+				title: 'email',
+				account: $scope.email,
+				icon: 'fa-envelope-square',
+				href: 'mailto:' + $scope.email
+			},{
+				title: 'Twitter',
+				account: '@adamdebono',
+				icon: 'fa-twitter-square',
+				href: 'http://twitter.com/adamdebono'
+			},{
+				title: 'GitHub',
+				account: 'adamdebono',
+				icon: 'fa-github-square',
+				href: 'http://github.com/adamdebono'
+			},{
+				title: 'LinkedIn',
+				account: 'adamdebono',
+				icon: 'fa-linkedin-square',
+				href: 'http://www.linkedin.com/in/adamdebono'
+			}
+		];
 	}]);

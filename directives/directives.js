@@ -24,38 +24,6 @@ angular.module('adamdebono')
 			}
 		};
 	}])
-	.directive('social', [function() {
-		return {
-			restrict: 'E',
-			replace: true,
-			templateUrl: 'directives/social.html',
-			controller: function($scope) {
-				$scope.items = [
-					{
-						title: 'Twitter',
-						account: '@adamdebono',
-						icon: 'fa-twitter-square',
-						href: 'http://twitter.com/adamdebono'
-					},{
-						title: 'GitHub',
-						account: 'adamdebono',
-						icon: 'fa-github-square',
-						href: 'http://github.com/adamdebono'
-					},{
-						title: 'LinkedIn',
-						account: 'adamdebono',
-						icon: 'fa-linkedin-square',
-						href: 'http://www.linkedin.com/in/adamdebono'
-					},{
-						title: 'eMail',
-						account: 'me@adamdebono.com',
-						icon: 'fa-envelope-square',
-						href: 'mailto:me@adamdebono.com'
-					}
-				];
-			}
-		};
-	}])
 
 	.directive('contentBox', [function() {
 		return {

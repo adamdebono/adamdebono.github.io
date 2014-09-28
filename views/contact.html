@@ -1,0 +1,13 @@
+<h1>Contact</h1>
+
+<p>Feel free to contact me if you've got an interesting project - my main skills are programming for iOS and the web, but I'd be happy to change it up and learn something new.</p>
+<p>My preferred method of contact is <a ng-href="mailto:{{email}}">email</a>, which is regularly checked and usually replied to fairly quickly. I'd be happy to organise a call or face to face if you'd rather that.</p>
+
+<ul class="social">
+	<li ng-repeat="item in contactItems">
+		<i class="fa {{item.icon}}"></i>
+		<a ng-href="{{item.href}}" title="{{item.title}}" target="_blank">
+			{{item.account}}
+		</a>
+	</li>
+</ul>

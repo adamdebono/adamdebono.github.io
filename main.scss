@@ -283,41 +283,6 @@ nav {
 
 ////////// Footer
 
-.social {
-	max-width: $max-size;
-	margin: 20px auto 0 auto;
-	
-	background-color: $navigation-background;
-	
-	>a.social-item {
-		display: inline-block;
-		padding: $navigation-text-padding;
-		
-		text-align: center;
-		
-		font-size: 14px;
-		color: $navigation-text;
-		text-decoration: none;
-		
-		>i {
-			font-size: 24px;
-			display: block;
-		}
-		
-		&:hover {
-			color: $navigation-text-highlight;
-		}
-
-		@media (max-width: $max-width-small) {
-			width: 50% !important;
-		}
-	}
-
-	@media (min-width: $min-width-large) {
-		padding: 0 10px;
-	}
-}
-
 .footer-message {
 	text-align: center;
 	font-size: 10px;
@@ -548,6 +513,28 @@ nav {
 			>.details {
 				max-height: 200px;
 			}
+		}
+	}
+}
+
+////////// Contact
+
+ul.social {
+	list-style-type: none;
+	
+	padding: 0;
+	
+	>li {
+		line-height: 24px;
+		
+		>i {
+			font-size: 24px;
+		}
+		>a {
+			vertical-align: text-bottom;
+			
+			color: $text-color;
+			font-size: 14px;
 		}
 	}
 }
