@@ -5,7 +5,7 @@ angular.module('adamdebono', ['ngRoute', 'ngAnimate'])
 	})
 
 
-	.config(['$routeProvider', 'adPages', function ($routeProvider, adPages) {
+	.config(['$routeProvider', 'adPages', 'adPages404', function ($routeProvider, adPages, adPages404) {
 		var viewDirectory = 'views';
 		var setupRoutes = function(pages, root) {
 			angular.forEach(pages, function(page) {
@@ -22,8 +22,16 @@ angular.module('adamdebono', ['ngRoute', 'ngAnimate'])
 			});
 		};
 		
-		setupRoutes(adPages, '/');
-		$routeProvider.otherwise({redirectTo: '/about'});
+		var rootUrl = '/';
+		setupRoutes(adPages, rootUrl);
+		$routeProvider.when(rootUrl, {
+			redirectTo: '/about'
+		});
+		
+		$routeProvider.otherwise({
+			controller: adPages404.controller,
+			templateUrl: viewDirectory + rootUrl + adPages404.id + '.html'
+		});
 	}])
 
 

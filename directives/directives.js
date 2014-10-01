@@ -36,7 +36,6 @@ angular.module('adamdebono')
 			},
 			controller: function($scope) {
 				$scope.$watch('style', function() {
-					console.log($scope.style);
 					if ($scope.style && $scope.style.length) {
 						$scope.boxStyle = 'content-box-'+$scope.style;
 					} else {

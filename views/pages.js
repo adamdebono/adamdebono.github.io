@@ -41,6 +41,12 @@ angular.module('adamdebono')
 			controller: 'ContactCtrl'
 		}
 	])
+	.constant('adPages404', {
+		title: '404',
+		id: '404',
+		path: '404',
+		controller: 'PlainCtrl'
+	})
 	
 /********** Controllers **********/
 
