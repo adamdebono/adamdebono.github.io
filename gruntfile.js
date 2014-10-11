@@ -36,11 +36,24 @@ module.exports = function(grunt) {
 					ext: '.min.js'
 				}]
 			}
+		},
+		
+		//Watch for changes to run tasks
+		watch: {
+			sass: {
+				files: ['assets/style/*.scss'],
+				tasks: ['sass']
+			},
+			js: {
+				files: ['assets/scripts/*.js'],
+				tasks: ['uglify']
+			}
 		}
 	});
 	
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	
-	grunt.registerTask('default', ['sass', 'uglify']);
+	grunt.registerTask('default', ['watch']);
 };
