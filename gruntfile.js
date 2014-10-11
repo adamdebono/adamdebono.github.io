@@ -17,13 +17,30 @@ module.exports = function(grunt) {
 					cwd: 'assets/style',
 					src: ['*.scss'],
 					dest: 'assets/dist/style',
-					ext: '.css'
+					ext: '.min.css'
+				}]
+			}
+		},
+		
+		//JS Uglify
+		uglify: {
+			dist: {
+				options: {
+					sourceMap: true
+				},
+				files: [{
+					expand: true,
+					cwd: 'assets/scripts',
+					src: '**/*.js',
+					dest: 'assets/dist/scripts',
+					ext: '.min.js'
 				}]
 			}
 		}
 	});
 	
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['sass', 'uglify']);
 };

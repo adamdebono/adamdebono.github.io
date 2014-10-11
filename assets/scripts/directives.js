@@ -4,7 +4,7 @@ angular.module('adamdebono')
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'assets/html/directives/navigation.html',
-			controller: function($scope) {
+			controller: ['$scope', function($scope) {
 				var setupNav = function(pages, root) {
 					var items = [];
 					angular.forEach(pages, function(page) {
@@ -21,7 +21,7 @@ angular.module('adamdebono')
 				$scope.$on('$locationChangeSuccess', function() {
 					$scope.path = $location.path();
 				});
-			}
+			}]
 		};
 	}])
 
@@ -34,7 +34,7 @@ angular.module('adamdebono')
 			scope: {
 				style: '@boxStyle'
 			},
-			controller: function($scope) {
+			controller: ['$scope', function($scope) {
 				$scope.$watch('style', function() {
 					if ($scope.style && $scope.style.length) {
 						$scope.boxStyle = 'content-box-'+$scope.style;
@@ -42,7 +42,7 @@ angular.module('adamdebono')
 						$scope.boxStyle = '';
 					}
 				});
-			}
+			}]
 		};
 	}])
 	.directive('contentSection', [function() {
