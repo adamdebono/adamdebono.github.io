@@ -1,4 +1,4 @@
-angular.module('adamdebono', ['ngRoute', 'ngAnimate'])
+angular.module('adamdebono', ['ngRoute'])
 	.constant('adGithub', {
 		apiUrl: 'https://api.github.com',
 		username: 'adamdebono'
