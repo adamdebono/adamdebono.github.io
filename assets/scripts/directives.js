@@ -3,7 +3,7 @@ angular.module('adamdebono')
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'directives/navigation.html',
+			templateUrl: 'assets/html/directives/navigation.html',
 			controller: function($scope) {
 				var setupNav = function(pages, root) {
 					var items = [];

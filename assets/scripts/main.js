@@ -6,7 +6,7 @@ angular.module('adamdebono', ['ngRoute'])
 
 
 	.config(['$routeProvider', 'adPages', 'adPages404', function ($routeProvider, adPages, adPages404) {
-		var viewDirectory = 'views';
+		var viewDirectory = 'assets/html/pages';
 		var setupRoutes = function(pages, root) {
 			angular.forEach(pages, function(page) {
 				var url = root+page.path;
