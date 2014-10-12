@@ -20,6 +20,7 @@ $navigation-background: $secondary-color;
 $navigation-text: #CCCCCC;
 $navigation-text-highlight: #FFFFFF;
 $navigation-text-padding: 15px 10px;
+$navigation-text-padding-small: 5px 5px;
 
 ////////// Sizes
 
@@ -66,7 +67,7 @@ body {
 		padding: $spacing-vert $spacing-sides;
 	}
 	@media (max-width: $max-width-small) {
-		padding-top: 52px;
+		padding-top: 75px;
 	}
 }
 
@@ -132,15 +133,12 @@ nav {
 		left: 0;
 		right: 0;
 	}
-	
-	a.toggle {
-		display: none;
-	}
 
 	>ul {
 		display: inline-block;
 
-		padding: 0;margin: 0;
+		padding: 0;
+		margin: 0;
 
 		>li {
 			display: inline-block;
@@ -167,16 +165,10 @@ nav {
 		}
 
 		&.title {
-			@media (max-width: $max-width-small) {
-				display: block;
-				width: 100%;
-				text-align: center;
-			}
-
 			>li {
 				>a {
-					font-weight: 600;
-					font-size: 18px;
+					font-weight: 200;
+					font-size: 26px;
 					color: $navigation-text-highlight;
 				}
 			}
@@ -185,71 +177,21 @@ nav {
 
 	//Collapsed
 	@media (max-width: $max-width-small) {
-		cursor: pointer;
-
-		-webkit-transition: -webkit-box-shadow 0.4s;
-		-moz-transition: -moz-box-shadow 0.4s;
-		-ms-transition: box-shadow 0.4s;
-		-o-transition: box-shadow 0.4s;
-		transition: box-shadow 0.4s;
-		
-		>a.toggle {
-			position: absolute;
-			top: 0;right: 0;bottom: 0;
-			
+		>ul {
 			display: block;
-			padding: $navigation-text-padding;
-
-			color: $navigation-text-highlight;
-
-			pointer-events: none;
-			
-			>i {
-				-webkit-transition: -webkit-transform 0.4s;
-				-moz-transition: transform 0.4s;
-				-ms-transition: -ms-transform 0.4s;
-				-o-transition: transform 0.4s;
-				transition: transform 0.4s;
-			}
-		}
-		>ul.items {
-			-webkit-transition: max-height 0.4s;
-			-moz-transition: max-height 0.4s;
-			-ms-transition: max-height 0.4s;
-			-o-transition: max-height 0.4s;
-			transition: max-height 0.4s;
-			
-			display: block;
-			max-height: 0px;
-			overflow: hidden;
+			text-align: center;
 			
 			>li {
-				display: block;
-			}
-		}
-		
-		&:focus {
-			cursor: inherit;
-
-			-webkit-box-shadow: 0px -2px 5px 5px;
-			-moz-box-shadow: 0px -2px 5px 5px;
-			box-shadow: 0px -2px 5px 5px;
-			
-			>ul {
-				&.items {
-					max-height: 300px;
-					overflow-y: auto;
+				>a {
+					padding: $navigation-text-padding-small;
 				}
 			}
 			
-			>a.toggle {
-				cursor: pointer;
-				pointer-events: inherit;
-				
-				>i {
-					-ms-transform: rotate(180deg); /* IE 9 */
-					-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-					transform: rotate(180deg);
+			&.title {
+				>li {
+					>a {
+						font-size: 26px;
+					}
 				}
 			}
 		}
