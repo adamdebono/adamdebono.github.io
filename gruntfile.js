@@ -48,6 +48,19 @@ module.exports = function(grunt) {
 				files: ['assets/scripts/*.js'],
 				tasks: ['uglify']
 			}
+		},
+		
+		//Static file server
+		connect: {
+			server: {
+				options: {
+					protocol: 'http',
+					hostname: '*',
+					port: 9001,
+					
+					open: true
+				}
+			}
 		}
 	});
 	
@@ -55,5 +68,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
-	grunt.registerTask('default', ['watch']);
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	
+	grunt.registerTask('default', ['sass', 'uglify']);
+	grunt.registerTask('serve', ['connect:server:keepalive', 'watch']);
 };
