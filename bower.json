@@ -10,6 +10,7 @@
   "dependencies": {
     "angularjs": "~1.2.26",
     "angular-route": "~1.2.26",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "angulartics": "~0.17.1"
   }
 }

@@ -1,4 +1,6 @@
-angular.module('adamdebono', ['ngRoute'])
+
+
+angular.module('adamdebono', ['ngRoute', 'angulartics', 'angulartics.google.analytics'])
 	.constant('adGithub', {
 		apiUrl: 'https://api.github.com',
 		username: 'adamdebono'
