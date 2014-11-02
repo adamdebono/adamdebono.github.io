@@ -7,7 +7,7 @@ angular.module('adamdebono', ['ngRoute', 'angulartics', 'angulartics.google.anal
 	})
 
 
-	.config(['$routeProvider', 'adPages', 'adPages404', function ($routeProvider, adPages, adPages404) {
+	.config(['$routeProvider', '$analyticsProvider', 'adPages', 'adPages404', function ($routeProvider, $analyticsProvider, adPages, adPages404) {
 		var viewDirectory = 'assets/html/pages';
 		var setupRoutes = function(pages, root) {
 			angular.forEach(pages, function(page) {
